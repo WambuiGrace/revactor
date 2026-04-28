@@ -43,7 +43,7 @@ TailwindCSS is a utility-first CSS framework. Instead of writing `.card { paddin
 ### Step 1 — Clone the repository
 
 ```bash
-git clone <your-repo-url>
+git clone https://github.com/WambuiGrace/revactor.git
 cd revactor
 ```
 
@@ -168,7 +168,6 @@ A two-column section: the left side shows the headline with the last line in gol
 **AI response summary:**
 The AI explained that TailwindCSS v4 no longer needs `npx tailwindcss init` — instead you install `tailwindcss` and `@tailwindcss/postcss`, then add a single `@import "tailwindcss"` to your CSS file. It also warned that the `@tailwind` directives from v3 are removed.
 
-**Helpfulness:** Very helpful. Without this prompt I would have followed the v3 docs and spent time debugging why the old directives didn't work.
 
 ---
 
