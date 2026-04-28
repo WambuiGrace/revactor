@@ -1,0 +1,48 @@
+/* Step 1: Tailwind v4 — import replaces the old @tailwind directives */
+@import "tailwindcss";
+
+/*
+  @theme defines design tokens that Tailwind maps to utility classes.
+  --color-accent  →  bg-accent, text-accent, border-accent
+  --color-border  →  border-border, divide-border
+  etc.
+*/
+@theme {
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+
+  --color-bg:      #080d09;
+  --color-surface: #0d1a0d;
+  --color-card:    #111f12;
+  --color-accent:  #d4a420;
+  --color-border:  #1e3020;
+  --color-muted:   #5a7058;
+  --color-success: #4ade80;
+  --color-danger:  #f87171;
+}
+
+/* Base reset */
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+  background-color: var(--color-bg);
+  color: #e2e8e2;
+  font-family: var(--font-mono);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Reusable section constraint */
+.container {
+  max-width: 72rem;
+  margin-inline: auto;
+  padding-inline: 1.5rem;
+}
+
+/* Circular score ring — conic-gradient trick */
+.score-ring {
+  background: conic-gradient(
+    var(--color-accent) 0% 77%,
+    var(--color-border) 77% 100%
+  );
+  border-radius: 50%;
+}
