@@ -67,12 +67,12 @@ export default function Features() {
               </div>
 
               {/* Card CTA */}
-              <Link
+              {/* <Link
                 href={href}
                 className="text-xs text-accent hover:underline mt-auto"
               >
                 learn more &rarr;
-              </Link>
+              </Link> */}
             </article>
           ))}
         </div>

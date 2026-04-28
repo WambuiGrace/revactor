@@ -5,13 +5,6 @@
 */
 import Link from "next/link";
 
-const navLinks = [
-  { label: "product",   href: "#" },
-  { label: "pricing",   href: "#" },
-  { label: "docs",      href: "#" },
-  { label: "changelog", href: "#" },
-];
-
 export default function Navbar() {
   return (
     <header className="border-b border-border">
@@ -22,30 +15,13 @@ export default function Navbar() {
           <span className="text-muted mr-1">&gt;</span> revactor
         </Link>
 
-        {/* Centre links — hidden on small screens */}
-        <ul className="hidden md:flex items-center gap-8 text-sm text-muted list-none">
-          {navLinks.map(({ label, href }) => (
-            <li key={label}>
-              <Link href={href} className="hover:text-[#e2e8e2] transition-colors duration-150">
-                {label}
-              </Link>
-            </li>
-          ))}
-        </ul>
-
         {/* CTA buttons */}
         <div className="flex items-center gap-3">
           <Link
             href="#"
-            className="text-sm text-muted hover:text-[#e2e8e2] transition-colors px-3 py-1.5"
-          >
-            log in
-          </Link>
-          <Link
-            href="#"
             className="text-sm bg-accent text-bg font-bold px-4 py-1.5 rounded-sm hover:opacity-90 transition-opacity"
           >
-            get free
+            Get started
           </Link>
         </div>
 

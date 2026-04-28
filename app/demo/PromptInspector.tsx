@@ -104,7 +104,7 @@ export default function PromptInspector({ onClose, onReRun }: Props) {
       onClick={e => { if (e.target === e.currentTarget) onClose(); }}
     >
       {/* Modal panel */}
-      <div className="w-full max-w-xl bg-surface border border-border rounded-sm flex flex-col max-h-[85vh] shadow-2xl">
+      <div className="w-full max-w-4xl bg-surface border border-border rounded-sm flex flex-col max-h-[90vh] shadow-2xl">
 
         {/* ── Header ── */}
         <div className="shrink-0 flex items-center justify-between px-4 py-2.5 border-b border-border">
@@ -114,10 +114,6 @@ export default function PromptInspector({ onClose, onReRun }: Props) {
               <span className="text-muted">&gt;</span> R
             </span>
             <span className="text-muted text-xs">Prompt inspector</span>
-            {/* Model badge */}
-            <span className="bg-card border border-border text-accent text-[10px] font-bold px-2 py-0.5 rounded-sm tracking-wide">
-              CLAUDE-HAIKU-4.5
-            </span>
           </div>
 
           <div className="flex items-center gap-2">
@@ -155,11 +151,11 @@ export default function PromptInspector({ onClose, onReRun }: Props) {
         </div>
 
         {/* ── Footer ── */}
-        <div className="shrink-0 flex items-center justify-between px-4 py-2.5 border-t border-border">
+        <div className="shrink-0 flex items-center justify-end px-4 py-2.5 border-t border-border">
           {/* Token / cost stats */}
-          <span className="text-[10px] text-muted">
+          {/* <span className="text-[10px] text-muted">
             input: 312 tok &middot; output: 988 tok &middot; cost: $0.0042
-          </span>
+          </span> */}
 
           <div className="flex items-center gap-2">
             <button
