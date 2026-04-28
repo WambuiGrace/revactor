@@ -374,12 +374,13 @@ export default function DemoWorkspace() {
                 {/* Run metadata row */}
                 <div className="flex items-center justify-between mb-1">
                   <div className="flex items-center gap-3">
-                    <span
-                      className="text-[10px] font-bold px-2 py-0.5 rounded-sm border text-success"
+                    <Link
+                      href="/report"
+                      className="text-[10px] font-bold px-2 py-0.5 rounded-sm border text-success hover:opacity-80 transition-opacity"
                       style={{ borderColor: 'var(--color-success)', backgroundColor: 'rgba(74,222,128,0.1)' }}
                     >
                       COMPLETE
-                    </span>
+                    </Link>
                     <span className="text-[10px] text-muted">claude · 1,247 tok · 2.1s</span>
                   </div>
                   <button
