@@ -8,15 +8,11 @@ import Link from "next/link";
 const columns = [
   {
     heading: "Product",
-    links: ["home", "pricing", "docs", "status"],
+    links: ["home", "docs", "status"],
   },
   {
-    heading: "Open Source",
-    links: ["api", "cli", "github", "discord"],
-  },
-  {
-    heading: "Legal",
-    links: ["terms", "privacy", "dpa", "security"],
+    heading: "Source",
+    links: ["github"],
   },
 ];
 
@@ -24,17 +20,17 @@ export default function Footer() {
   return (
     <footer className="border-t border-border mt-auto">
       <div className="container py-12">
-        <div className="flex flex-col md:flex-row gap-10 md:gap-16">
+        <div className="flex flex-col md:flex-row gap-10 md:justify-between items-center md:items-start">
 
           {/* Brand block */}
-          <div className="flex-1 max-w-xs">
+          <div className="flex-1 max-w-xs text-center md:text-left">
             <p className="text-accent font-bold mb-2">
               <span className="text-muted mr-1">&gt;</span> revactor
             </p>
             <p className="text-muted text-xs leading-relaxed mb-4">
-              AI code review for teams that ship.
+              AI code review for people that ship.
             </p>
-            <p className="text-muted text-[11px]">&copy; 2024 revactor.</p>
+            <p className="text-muted text-[11px]">&copy; {new Date().getFullYear()} revactor.</p>
           </div>
 
           {/* Link columns */}

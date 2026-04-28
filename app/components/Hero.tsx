@@ -91,11 +91,11 @@ export default function Hero() {
         {/* Left column: headline, subtitle, CTAs */}
         <div className="flex-1 max-w-xl">
 
-          {/* Version badge */}
+          {/* Version badge
           <span className="inline-flex items-center gap-2 text-xs border border-border text-muted px-3 py-1 rounded-full mb-8">
             <span className="w-1.5 h-1.5 rounded-full bg-success" />
             v0.4 — PUBLIC BETA
-          </span>
+          </span> */}
 
           {/* Main headline — note the last line is accent-coloured */}
           <h1 className="text-4xl lg:text-5xl font-bold leading-tight tracking-tight uppercase mb-6">
@@ -116,19 +116,19 @@ export default function Hero() {
               href="/demo"
               className="bg-accent text-bg font-bold text-sm px-5 py-2.5 rounded-sm hover:opacity-90 transition-opacity"
             >
-              Try the demo &rarr;
+              Get started
             </Link>
             <Link
               href="#"
               className="border border-border text-sm text-[#e2e8e2] px-5 py-2.5 rounded-sm hover:border-muted transition-colors"
             >
-              View on GitHub &nearr;
+              View on GitHub &rarr;
             </Link>
           </div>
 
           {/* Social proof */}
           <p className="text-muted text-xs">
-            <span className="text-[#e2e8e2]">1 dev reviewing</span>
+            <span className="text-[#e2e8e2]">dev reviewing</span>
             &nbsp;&middot;&nbsp;
             no signup. no wait.
           </p>

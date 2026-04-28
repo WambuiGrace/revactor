@@ -257,12 +257,6 @@ export default function DemoWorkspace() {
           <button className="text-xs border border-border text-muted px-3 py-1 rounded-sm hover:text-[#e2e8e2] hover:border-muted transition-colors">
             UPLOAD
           </button>
-          <button
-            onClick={() => setShowPrompt(true)}
-            className="text-xs border border-border text-muted px-3 py-1 rounded-sm hover:text-[#e2e8e2] hover:border-muted transition-colors"
-          >
-            PROMPT
-          </button>
 
           {/* Primary CTA — triggers the review */}
           <button
@@ -271,7 +265,6 @@ export default function DemoWorkspace() {
             className="flex items-center gap-1.5 text-xs bg-accent text-bg font-bold px-4 py-1 rounded-sm hover:opacity-90 transition-opacity disabled:opacity-50"
           >
             REVIEW CODE
-            <span className="text-[9px] opacity-60 font-normal">⌘↵</span>
           </button>
         </div>
       </header>
@@ -280,12 +273,12 @@ export default function DemoWorkspace() {
       <div className="flex flex-1 min-h-0 divide-x divide-border">
 
         {/* ── Left: code editor ─── */}
-        <div className="flex flex-col flex-1 min-w-0">
+        <div className="flex flex-col flex-1 min-w-0 w-1/2">
 
           {/* File tab strip */}
           <div className="shrink-0 flex items-center justify-between px-4 h-9 border-b border-border bg-surface">
             <div className="flex items-center gap-2">
-              <span className="w-2 h-2 rounded-full bg-success" />
+              <span className="w-2 h-2 rounded-full bg-accent" />
               <span className="text-xs">fetchAll.ts</span>
             </div>
             <span className="text-[10px] text-muted">
@@ -294,7 +287,7 @@ export default function DemoWorkspace() {
           </div>
 
           {/* Editor: line numbers + textarea */}
-          <div className="flex flex-1 overflow-auto min-h-0">
+          <div className="flex flex-1 overflow-auto min-h-0 items-start">
 
             {/* Line numbers — non-selectable, syncs with textarea rows */}
             <div className="shrink-0 bg-surface border-r border-border px-3 pt-4 pb-4 text-right text-muted text-xs leading-6 select-none">
@@ -309,11 +302,12 @@ export default function DemoWorkspace() {
               whitespace-pre preserves indentation — critical for code.
             */}
             <textarea
+              rows={lines.length}
               value={code}
               onChange={e => setCode(e.target.value)}
               onKeyUp={updateCursor}
               onClick={updateCursor}
-              className="flex-1 bg-transparent text-xs leading-6 px-4 pt-4 pb-4 outline-none resize-none text-[#e2e8e2] whitespace-pre"
+              className="flex-1 bg-transparent text-xs leading-6 px-4 pt-4 pb-4 outline-none resize-none text-[#e2e8e2] whitespace-pre overflow-hidden"
               spellCheck={false}
               autoCorrect="off"
               autoCapitalize="off"
@@ -322,7 +316,7 @@ export default function DemoWorkspace() {
         </div>
 
         {/* ── Right: review panel ─── */}
-        <div className="flex flex-col w-115 shrink-0 min-h-0">
+        <div className="flex flex-col flex-1 min-w-0 w-1/2 min-h-0">
 
           {/* Tab bar */}
           <div className="shrink-0 flex items-center justify-between border-b border-border bg-surface">
@@ -331,10 +325,10 @@ export default function DemoWorkspace() {
                 <button
                   key={id}
                   onClick={() => setActiveTab(id)}
-                  className={`px-4 h-9 text-xs font-bold tracking-wider transition-colors ${
+                  className={`px-4 h-9 text-xs font-bold tracking-wider transition-colors border-b-2 ${
                     activeTab === id
-                      ? 'text-accent border-b-2 border-accent'
-                      : 'text-muted hover:text-[#e2e8e2]'
+                      ? 'text-accent border-accent'
+                      : 'text-muted border-transparent hover:text-[#e2e8e2]'
                   }`}
                 >
                   {label}
