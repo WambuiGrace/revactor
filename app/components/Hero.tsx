@@ -113,7 +113,7 @@ export default function Hero() {
           {/* CTA buttons */}
           <div className="flex flex-wrap items-center gap-4 mb-8">
             <Link
-              href="#"
+              href="/demo"
               className="bg-accent text-bg font-bold text-sm px-5 py-2.5 rounded-sm hover:opacity-90 transition-opacity"
             >
               Try the demo &rarr;
