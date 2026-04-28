@@ -14,6 +14,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
+import PromptInspector from './PromptInspector';
 
 // ── Types ──────────────────────────────────────────────────────────
 
@@ -198,6 +199,7 @@ export default function DemoWorkspace() {
   const [activeTab,   setActiveTab]   = useState<ActiveTab>('review');
   const [cursorLine,  setCursorLine]  = useState(1);
   const [cursorCol,   setCursorCol]   = useState(1);
+  const [showPrompt,  setShowPrompt]  = useState(false);
 
   const lines     = code.split('\n');
   const bugCount  = REVIEW_ITEMS.filter(i => i.type !== 'NOTE').length;
@@ -255,7 +257,10 @@ export default function DemoWorkspace() {
           <button className="text-xs border border-border text-muted px-3 py-1 rounded-sm hover:text-[#e2e8e2] hover:border-muted transition-colors">
             UPLOAD
           </button>
-          <button className="text-xs border border-border text-muted px-3 py-1 rounded-sm hover:text-[#e2e8e2] hover:border-muted transition-colors">
+          <button
+            onClick={() => setShowPrompt(true)}
+            className="text-xs border border-border text-muted px-3 py-1 rounded-sm hover:text-[#e2e8e2] hover:border-muted transition-colors"
+          >
             PROMPT
           </button>
 
@@ -317,7 +322,7 @@ export default function DemoWorkspace() {
         </div>
 
         {/* ── Right: review panel ─── */}
-        <div className="flex flex-col w-[460px] shrink-0 min-h-0">
+        <div className="flex flex-col w-115 shrink-0 min-h-0">
 
           {/* Tab bar */}
           <div className="shrink-0 flex items-center justify-between border-b border-border bg-surface">
@@ -343,7 +348,10 @@ export default function DemoWorkspace() {
             </div>
 
             <div className="flex items-center gap-1 pr-3">
-              <button className="text-[10px] text-muted border border-border px-2 py-0.5 rounded-sm hover:text-[#e2e8e2] transition-colors">
+              <button
+                onClick={() => setShowPrompt(true)}
+                className="text-[10px] text-muted border border-border px-2 py-0.5 rounded-sm hover:text-[#e2e8e2] transition-colors"
+              >
                 PROMPT
               </button>
               <button className="text-[10px] text-muted border border-border px-2 py-0.5 rounded-sm hover:text-[#e2e8e2] transition-colors">
@@ -449,6 +457,14 @@ export default function DemoWorkspace() {
           <span>spaces: 2</span>
         </div>
       </footer>
+
+      {/* ── Prompt inspector modal ──────────────────────────────── */}
+      {showPrompt && (
+        <PromptInspector
+          onClose={() => setShowPrompt(false)}
+          onReRun={() => { setShowPrompt(false); runReview(); }}
+        />
+      )}
 
     </div>
   );
